@@ -1,5 +1,5 @@
 ## Share House
 
-### Sistema Web para Divisão de Aluguéis.
+### Sistema Web Para a Divisão de Aluguéis de Imóveis.
 
 ...
