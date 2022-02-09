@@ -3,7 +3,7 @@ const router = express.Router()
 const { imovel } = require('../models')
 
 router.get('/', async (req, res) => {
-const imoveis = await imovel.findAll()
+  const imoveis = await imovel.findAll()
   res.json(imoveis)
 })
 
