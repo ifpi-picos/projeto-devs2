@@ -1,16 +1,15 @@
 const express = require('express')
 const router = express.Router()
+const { imovel } = require('../models')
 
-const listaImoveis = []
-
-router.get('/', (req, res) => {
-  res.json(listaImoveis)
+router.get('/', async (req, res) => {
+const imoveis = await imovel.findAll()
+  res.json(imoveis)
 })
 
-router.post('/', (req, res) => {
-  const dadosImovel = req.body
-  console.log(dadosImovel)
-  listaImoveis.push(dadosImovel)
+router.post('/', async (req, res) => {
+  const { cidade, bairro, valorAluguel, quantInquilinos } = req.body
+  await imovel.create({ cidade, bairro, valorAluguel, quantInquilinos })
   res.send('Imóvel adicionado com sucesso!')
 })
 
