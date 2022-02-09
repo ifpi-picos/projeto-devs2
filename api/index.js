@@ -6,7 +6,7 @@ const imoveisRouter = require('./imoveis')
 const router = express.Router()
 
 router.get('/', (req, res) => {
-  res.send('App online!')
+  res.send('App Online!')
 })
 
 router.use('/usuarios', usuariosRouter)

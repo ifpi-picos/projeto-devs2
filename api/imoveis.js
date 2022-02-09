@@ -8,10 +8,10 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  const dadosImoveis = req.body
-  console.log(dadosImoveis)
-  listaImoveis.push(dadosImoveis)
-  res.send('Imóvel cadastrado com sucesso!')
+  const dadosImovel = req.body
+  console.log(dadosImovel)
+  listaImoveis.push(dadosImovel)
+  res.send('Imóvel adicionado com sucesso!')
 })
 
 module.exports = router
