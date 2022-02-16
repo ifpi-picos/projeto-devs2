@@ -1,16 +1,15 @@
 const express = require('express')
 const router = express.Router()
+const { usuario } = require('../models')
 
-const listaUsuarios = []
-
-router.get('/', (req, res) => {
-  res.json(listaUsuarios)
+router.get('/', async (req, res) => {
+  const usuarios = await usuario.findAll()
+  res.json(usuarios)
 })
 
-router.post('/', (req, res) => {
-  const dadosUsuario = req.body
-  console.log(dadosUsuario)
-  listaUsuarios.push(dadosUsuario)
+router.post('/', async (req, res) => {
+  const { nomeCompleto, telefone, email, senha } = req.body
+  await usuario.create({ nomeCompleto, telefone, email, senha })
   res.send('Usuário adicionado com sucesso!')
 })
 
