@@ -8,7 +8,7 @@ app.use(express.json())
 app.use('/', routers)
 
 sequelize.sync().then(() => {
-  console.log('Conectado com o banco de dados.')
+  console.log('Conectado ao banco de dados!')
 })
 
 app.listen(3000, () => {
