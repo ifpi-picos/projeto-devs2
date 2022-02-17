@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="navbar">
+            <a class="active">Share House</a>
+            <button id="button">Cadastrar</button>
+            <button id="btt">Mostrar</button>
+        </div>
+    </nav>
+    <form id="form" method="post">
+        <div class="campo">
+            <label for="cidade"><strong>Cidade:</strong></label>
+            <input type="text" name="cidade" id="cidade">
+        </div>
+        <div class="campo">
+            <label for="bairro"><strong>Bairro:</strong></label>
+            <input type="text" name="bairro" id="bairro">
+        </div>
+        <div class="campo">
+            <label for="valorAluguel"><strong>Valor do Aluguel:</strong></label>
+            <input type="text" name="valorAluguel" id="valorAluguel">
+        </div>
+        <div class="campo">
+            <label for="quantInquilinos"><strong>Quantidade de Inquilinos:</strong></label>
+            <input type="number" name="quantInquilinos" id="quantInquilinos">
+        </div>
+        <div class="campo">
+            <label for="telefone"><strong>Telefone:</strong></label>
+            <input type="tel" name="telefone" id="telefone">
+        </div>
+        <button type="submit" id="bttSalvar">Salvar</button>
+    </form>
+</body>
+<script src="script.js"></script>
+<script src="cadastrados.js"></script>
+
+</html>
