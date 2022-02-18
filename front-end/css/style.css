@@ -46,6 +46,7 @@ body {
     font-size: 17px;
     color: white;
     background-color: #333;
+    width: auto;
 }
 
 .campo {
@@ -85,4 +86,15 @@ body {
 .tbUsers a.active {
     background-color: #04AA6D;
     color: white;
+}
+
+#imovel {
+    border: 1px;
+    text-align: center;
+    font-size: 17px;
+    margin-top: 5%;
+}
+
+#IM {
+    text-align: center;
 }

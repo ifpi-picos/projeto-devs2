@@ -1,3 +1,27 @@
-const LOCAL_API_URL = 'http://localhost:3000/api'
-const HOST = window.location.host
-const API_URL = HOST.includes('netlify.app') ? REMOTE_API_URL : LOCAL_API_URL
+const divImoveis = document.querySelector("#imovel")
+const mostrarImoveis = document.getElementById('btt');
+
+async function consutaImoveis() {
+    const retorno = await fetch('http://localhost:3000/imoveis')
+    const imovels = await retorno.json()
+    mostrarImoveis.addEventListener('click', () => {
+        preencheTela(imovels)
+    })
+}
+
+function preencheTela(imovels) {
+    imovels.forEach(imovel => {
+        const imoveisHTML = `
+        <div class="imovel">
+        <tr>
+            <td>${imovel.cidade}</td>
+            <td>${imovel.bairro}</td>
+            <td>${imovel.valorAluguel}</td>
+            <td>${imovel.quantInquilinos}</td>
+            <td>${imovel.telefone}</td>
+        </tr>
+        `
+        divImoveis.innerHTML = divImoveis.innerHTML + imoveisHTML
+    });
+}
+consutaImoveis()

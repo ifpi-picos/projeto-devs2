@@ -12,9 +12,9 @@
 <body>
     <nav>
         <div class="navbar">
-            <a class="active">Share House</a>
+            <a href="home.html" class="active">Share House</a>
             <button id="button">Cadastrar</button>
-            <button id="btt">Mostrar</button>
+            <button id="btt">listar cadastrados</button>
         </div>
     </nav>
     <form id="form" method="post">
@@ -38,10 +38,12 @@
             <label for="telefone"><strong>Telefone:</strong></label>
             <input type="tel" name="telefone" id="telefone">
         </div>
-        <button type="submit" id="bttSalvar">Salvar</button>
+        <button id="bttSalvar">Salvar</button>
     </form>
+    <div id="imovel"></div>
 </body>
 <script src="script.js"></script>
 <script src="cadastrados.js"></script>
+<script src="cadastrar.js"></script>
 
 </html>
