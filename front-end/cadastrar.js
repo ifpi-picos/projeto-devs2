@@ -1,4 +1,5 @@
 const btn = document.querySelector('#bttSalvar')
+const LOCAL_API_URL = 'http://localhost:3000/api'
 
 btn.addEventListener('click', () => {
     const imovel = getDadosForm()
@@ -24,7 +25,7 @@ function getDadosForm() {
 
 async function enviarDadosParaAPI(imovels) {
     try {
-        const resposta = await fetch('http://localhost:3000/imovel', {
+        const resposta = await fetch('http://localhost:3000/imoveis', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -34,11 +35,18 @@ async function enviarDadosParaAPI(imovels) {
         })
         if (resposta.status === 201) {
             limparCampos()
-            window.location.href = 'home.html'
         } else {
             console.log('Erro ao adicionar imovel')
         }
     } catch (erro) {
         console.error(erro)
     }
+}
+
+function limparCampos() {
+    document.querySelector('#cidade').value = ''
+    document.querySelector('#bairro').value = ''
+    document.querySelector('#quantInquilinos').value = ''
+    document.querySelector('#valorAluguel').value = ''
+    document.querySelector('#telefone').value = ''
 }

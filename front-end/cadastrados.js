@@ -1,5 +1,6 @@
 const divImoveis = document.querySelector("#imovel")
-const mostrarImoveis = document.getElementById('btt');
+const mostrarImoveis = document.getElementById('btt')
+const limpar = document.querySelector('#bttSalvar')
 
 async function consutaImoveis() {
     const retorno = await fetch('http://localhost:3000/imoveis')
@@ -25,3 +26,7 @@ function preencheTela(imovels) {
     });
 }
 consutaImoveis()
+
+limpar.addEventListener('click', () => {
+    divImoveis.innerHTML = ''
+})
