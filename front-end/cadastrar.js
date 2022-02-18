@@ -24,7 +24,7 @@ function getDadosForm() {
 
 async function enviarDadosParaAPI(imovels) {
     try {
-        const resposta = await fetch('http://localhost:3000/', {
+        const resposta = await fetch('http://localhost:3000/imovel', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
